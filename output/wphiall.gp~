@@ -1,0 +1,31 @@
+set term postscript eps enhanced colour 24
+set output 'wphi_0.eps'
+
+#set title '{/Symbol qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM}'
+set key right  top
+
+set key font ",16"
+#set terminal png size 1280, 480 font "Helvetica,30"
+#set yrange [-0.05:0.2]
+set xrange [0:3]
+set xlabel 'z'
+set ylabel '1 +  w_{/Symbol f}'
+#set logscale x
+
+#set arrow from 1., graph 0 to 1., graph 1 nohead
+
+p'explanatory00_background.dat' u 1:(1 - cos($17)) t 'w_{/Symbol f} = -0.95, {/Symbol a}_0 = 1500' w l lw 4 linecolor 1 , \
+'explanatory01_background.dat' u 1:(1 - cos($17)) t ' = 500' w l lw 4 linecolor 2,\
+'explanatory02_background.dat' u 1:(1 - cos($17)) t ' = 0' w l lw 4 linecolor 3,\
+'explanatory03_background.dat' u 1:(1 - cos($17)) t ' = -10' w l lw 4 linecolor 4, \
+'explanatory04_background.dat' u 1:(1 - cos($17)) t ' = -20' w l lw 4 linecolor 5,\
+'explanatory05_background.dat' u 1:(1-cos($17)) t 'w_{/Symbol f} = -0.9, {/Symbol a}_0 = 1500' w l  dt '.' lw 4 linecolor 1, \
+'explanatory06_background.dat' u 1:(1- cos($17)) t ' = 500' w l  dt '.' lw 4 linecolor 2, \
+'explanatory07_background.dat' u 1:(1 - cos($17)) t ' = 0' w l  dt '.' lw 4 linecolor 3,\
+'explanatory08_background.dat' u 1:(1 - cos($17)) t ' = -10 ' w l  dt '.' lw 4 linecolor 4, \
+'explanatory09_background.dat' u 1:(1- cos($17)) t ' = -20' w l  dt '.' lw 4 linecolor 5, \
+'explanatory10_background.dat' u 1:(1 - cos($17)) t 'w_{/Symbol f} = -0.85, {/Symbol a}_0 = 1500' w l  dt '-' lw 4 linecolor 1,\
+'explanatory11_background.dat' u 1:(1 - cos($17)) t ' = 500' w l  dt '-' lw 4 linecolor 2,\
+'explanatory12_background.dat' u 1:(1 - cos($17)) t ' = 0' w l  dt '-' lw 4 linecolor 3, \
+'explanatory13_background.dat' u 1:(1 - cos($17)) t ' = -10' w l  dt '-' lw 4 linecolor 4,\
+'explanatory14_background.dat' u 1:(1 - cos($17)) t ' = -20' w l  dt '-' lw 4 linecolor 5
